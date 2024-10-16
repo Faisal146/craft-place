@@ -1,13 +1,15 @@
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import img from '../assets/1693632036481.png'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
 
+
 const Login = () => {
-  const authinfo = useContext(AuthContext)
-  console.log(authinfo)
+  const location = useLocation()
+  const navigate = useNavigate()
+  console.log(location)
 
   const {userLogin, GoogleSign,githubSign} = useContext(AuthContext)
 
@@ -58,6 +60,7 @@ const Login = () => {
            icon: 'success',
            confirmButtonText: 'Ok'
          })
+         navigate(location?.state ? location.state : '/')
        }).catch(error => {
         let msg;
         if(error == 'FirebaseError: Firebase: Error (auth/invalid-credential).'){
@@ -88,6 +91,7 @@ const Login = () => {
         icon: 'success',
         confirmButtonText: 'Ok'
       })
+      navigate(location?.state ? location.state : '/')
 
       // navigate(location?.state ? location.state : '/') 
       }).catch( error => {
@@ -111,7 +115,7 @@ const Login = () => {
         confirmButtonText: 'Ok'
       })
 
-      // navigate(location?.state ? location.state : '/') 
+       navigate(location?.state ? location.state : '/') 
       }).catch( error => {
         Swal.fire({
           title: 'Error!',
@@ -170,7 +174,7 @@ const Login = () => {
                 <button className="btn-info btn md:flex-1 w-full" onClick={googlesign}><FaGithub></FaGithub> Continue With Github</button>
      </div>
      <div className="massage text-center mt-5">
-                <p>Donot Have any account ? <Link className="underline" to="/register">Register Now</Link></p>
+                <p>Donot Have any account ? <Link state={location.state} className="underline" to="/register">Register Now</Link></p>
               </div>
             </div>
         </div>

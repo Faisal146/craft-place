@@ -1,11 +1,18 @@
 import { FaCamera, FaGithub, FaGoogle } from 'react-icons/fa';
 import img from '../assets/1693632036481.png'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
 
 const Register = () => {
+
+  const location = useLocation()
+  const navigate = useNavigate()
+  console.log(location)
+
+
+
   const {userRegister, updateProfilee , GoogleSign, githubSign} = useContext(AuthContext)
 
   const  handleRegister = (e)=>{
@@ -59,6 +66,7 @@ const Register = () => {
               icon: 'success',
               confirmButtonText: 'Ok'
             })
+            navigate(location?.state ? location.state : '/')
           }).catch((err)=>{
             Swal.fire({
               title: 'Error!',
@@ -98,7 +106,7 @@ const Register = () => {
         confirmButtonText: 'Ok'
       })
 
-      // navigate(location?.state ? location.state : '/') 
+       navigate(location?.state ? location.state : '/') 
       }).catch( error => {
         Swal.fire({
           title: 'Error!',
@@ -120,7 +128,7 @@ const Register = () => {
         confirmButtonText: 'Ok'
       })
 
-      // navigate(location?.state ? location.state : '/') 
+       navigate(location?.state ? location.state : '/') 
       }).catch( error => {
         Swal.fire({
           title: 'Error!',
