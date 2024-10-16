@@ -1,0 +1,11 @@
+
+*{
+    font-family: 'Poppins' , sans-serif;
+}
+.table1 tbody>tr:hover{
+    background-color: rgba(0, 255, 255, 0.581);
+
+}
+.table1 tbody>tr:hover th{
+    background-color: rgba(0, 255, 255, 0.581);
+}

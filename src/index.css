@@ -1,0 +1,51 @@
+@font-face {
+   font-family: 'text';
+   src: url(fonts/PlayfairDisplay-VariableFont_wght.ttf);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+ *{
+    font-family: text;
+ }
+
+ .slick-next {
+   right: 20px !important;
+}
+
+ .slick-prev {
+    left: 20px !important; 
+    z-index: 99;
+}
+.slick-prev, .slick-next {
+   font-size: 0;
+   line-height: 0;
+   position: absolute;
+   top: 50%;
+   display: block;
+   background: #6f6fd0 !important;
+   width: 40px !important;
+   height: 40px !important;
+   border-radius: 5px !important;
+   padding: 10px 0 !important;
+   transform: translate(0, -50%);
+   cursor: pointer;
+   color: transparent;
+   border: none;
+   outline: none;
+   /* background: transparent; */
+}
+.slick-dots {
+   position: absolute;
+   bottom: 20px !important;
+  
+}
+
+@media (max-width: 600px){
+   .slick-prev, .slick-next {
+     display: none !important;
+      /* background: transparent; */
+   }
+}
