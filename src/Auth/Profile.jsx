@@ -30,8 +30,7 @@ const Profile = () => {
             </div>
         </> :  <span className="loading mt-20 mb-20 loading-dots loading-lg"></span>  
       }
-         
-           
+
 
         </div>
     );

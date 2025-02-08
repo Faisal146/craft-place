@@ -1,26 +1,38 @@
-# Sweet Home 
+# Sweet Home
 
-this a House and Property rent or sale website project 
+this a House and Property rent or sale website project
 
--- this website made with react and firebase
+# **website category**
 
-Freatures of this website
+** Art and Painting **
 
- 1. Fully responsive and fast 
- 2. Log in and sign in freature 
- 3. User can update their profile
- 4. All kind of properties listed 
- 5. using Firebase authentication system
+live site link --
 
-Npm Packages used -
+# this website made with
 
- 1. React icons
- 2. firebase
- 3. font awesome 
- 4. react slider 
- 5. sweet alert 
+1. react
+2. firebase
+3. express
+4. mongo db
 
+# Freatures of this website
 
+1.  Fully responsive and fast
+2.  Log in and sign in freature
+3.  User can update their profile
+4.  All kind of Art and craft listed
+5.  using Firebase authentication system
+6.  user can add their own items
+
+# Npm Packages used -
+
+1.  React icons
+2.  firebase
+3.  font awesome
+4.  react slider
+5.  sweet alert
+6.  slik slider
+7.  tailwind and daisy ui
 
 # React + Vite
 

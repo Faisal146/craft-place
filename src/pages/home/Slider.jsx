@@ -20,7 +20,7 @@ const Slide = () => {
         slidesToScroll: 1,
         waitForAnimate: false,
         autoplay: true,
-       autoplaySpeed: 2000,
+       autoplaySpeed: 3000,
        cssEase: "linear"
       };
     return (

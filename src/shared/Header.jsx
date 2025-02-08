@@ -13,17 +13,17 @@ const Header = () => {
                <li>
                 <NavLink to='/all'>All Items</NavLink>
               </li>
+              
+              
+            
+              {user && (
+              <>
                <li>
                 <NavLink to='/add'>Add Craft Item</NavLink>
               </li>
                <li>
                 <NavLink to='/list'> My List</NavLink>
               </li>
-               <li>
-                <NavLink to='about'> About Us</NavLink>
-              </li>
-              {user && (
-              <>
                 <li>
                   <NavLink to="/update-profile">Update Profile</NavLink>
                 </li>
@@ -32,6 +32,9 @@ const Header = () => {
                 </li> 
               </>
             )}
+               <li>
+                <NavLink to='about'> About Us</NavLink>
+              </li>
         </>
   return (
     <div className="bg-base-200">

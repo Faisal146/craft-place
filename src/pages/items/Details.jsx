@@ -29,7 +29,7 @@ const Details = () => {
     return (
         <div className='max-w-6xl mx-auto my-12'>
            <div className='md:flex block'>
-            <div className="left md:w-1/2 w-full md:h-auto h-96 rounded" style={{background: `url(${img})`, backgroundSize:'cover', backgroundRepeat:'no-repeat'}}>
+            <div className="left md:w-1/2 w-full md:h-auto h-96 rounded" style={{background: `url(${image})`, backgroundSize:'cover', backgroundRepeat:'no-repeat'}}>
                 
             </div>
             <div className="right md:w-1/2 w-full pl-5 md:pl-10 ">

@@ -1,7 +1,7 @@
-import { FaGithub, FaGoogle } from 'react-icons/fa';
+import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from 'react-icons/fa';
 import img from '../assets/1693632036481.png'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
 
@@ -10,6 +10,9 @@ const Login = () => {
   const location = useLocation()
   const navigate = useNavigate()
   console.log(location)
+
+  const [passShow , setPassShow] = useState(false)
+
 
   const {userLogin, GoogleSign,githubSign} = useContext(AuthContext)
 
@@ -152,7 +155,7 @@ const Login = () => {
   <input type="email" className="grow" placeholder="Email" name='email' required />
 </label>
 
-<label className="input input-bordered flex items-center gap-2  my-3">
+<label className="input input-bordered flex items-center gap-2  my-3 relative">
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 16 16"
@@ -163,15 +166,22 @@ const Login = () => {
       d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
       clipRule="evenodd" />
   </svg>
-  <input type="password" className="grow" placeholder='*******' name='password' required />
+  <div className=''>
+     <input name='password'  className="grow" placeholder='*******' type={passShow ? 'text' : 'password'}  required />
+     <span className='showBtn absolute top-4 text-xl right-5'  onClick={ ()=> setPassShow(!passShow)}>
+     {passShow ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+     </span>
+
+  </div>
+ 
 </label>
 
 <button type='submit' className='btn w-full btn-accent mt-5'> Log in </button>
 </form>
 
 <div className="provider text-center flex flex-wrap gap-3 justify-center my-5 pt-5">
-                <button  className="btn-primary btn md:flex-1 w-full" onClick={githubsign}><FaGoogle></FaGoogle> Continue With Google</button>
-                <button className="btn-info btn md:flex-1 w-full" onClick={googlesign}><FaGithub></FaGithub> Continue With Github</button>
+                <button  className="btn-primary btn md:flex-1 w-full" onClick={googlesign}><FaGoogle></FaGoogle> Continue With Google</button>
+                <button className="btn-info btn md:flex-1 w-full" onClick={githubsign}><FaGithub></FaGithub> Continue With Github</button>
      </div>
      <div className="massage text-center mt-5">
                 <p>Donot Have any account ? <Link state={location.state} className="underline" to="/register">Register Now</Link></p>
