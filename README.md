@@ -8,6 +8,8 @@ this a House and Property rent or sale website project
 
 live site link --
 
+## https://craft-place.netlify.app/
+
 # this website made with
 
 1. react
