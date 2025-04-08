@@ -1,6 +1,6 @@
-# Sweet Home
+# Craft Place
 
-this a House and Property rent or sale website project
+This is a Art and Craft Shearing website project
 
 # **website category**
 
